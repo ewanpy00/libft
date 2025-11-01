@@ -1,0 +1,11 @@
+check size_t everywhere       
+
+check for the overflows
+
+check for the negative unsigned chars       P.S. not sure i need to use them
+
+check for octal system in all the character functions           P.S. not sure its nessecary
+
+Atoi Max And MIN values
+
+return ptr tpp an int
