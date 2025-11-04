@@ -6,7 +6,7 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 15:54:29 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/01 22:23:45 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/04 12:46:09 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(const char *str)
 
 	result = 0;
 	sign = 1;
-	while ((*str > 1 && *str <= 31) || *str == ' ')
+	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
 	{
 		str++;
 	}
@@ -34,9 +34,7 @@ int	ft_atoi(const char *str)
 		result = result * 10 + *str - '0';
 		str++;
 	}
-	if (sign == -1)
-		result *= -1;
-	return (result);
+	return (result * sign);
 }
 
 // #include <stdio.h>

@@ -11,3 +11,5 @@ Atoi Max And MIN values
 return ptr tpp an int
 
 find out what is **lst ???
+
+atoi check for overflows
