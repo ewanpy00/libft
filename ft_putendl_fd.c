@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ipykhtin <ipykhtin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 16:26:54 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/01 16:29:47 by ipykhtin         ###   ########.fr       */
+/*   Updated: 2025/11/01 22:59:19 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd){
-    while(*s){
-        write(fd, *s, 1);
-        s++;
-    }
-    write(fd, '\n', 1);
+void	ft_putendl_fd(char *s, int fd)
+{
+	while (*s)
+	{
+		write(fd, &*s, 1);
+		s++;
+	}
+	write(fd, "\n", 1);
 }

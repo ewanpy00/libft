@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ipykhtin <ipykhtin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 16:25:34 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/01 16:26:42 by ipykhtin         ###   ########.fr       */
+/*   Updated: 2025/11/01 22:58:28 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd){
-    while(*s){
-        write(fd, *s, 1);
-        s++;
-    }
+void	ft_putstr_fd(char *s, int fd)
+{
+	while (*s)
+	{
+		write(fd, &*s, 1);
+		s++;
+	}
 }

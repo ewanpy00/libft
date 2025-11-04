@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ipykhtin <ipykhtin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 11:47:10 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/10/29 13:55:09 by ipykhtin         ###   ########.fr       */
+/*   Updated: 2025/11/02 16:00:15 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,10 @@
 
 int	ft_isdigit(int c)
 {
-	return (c >= '0' && c <= '1');
+	return (c >= '0' && c <= '9');
 }
+
+// int main(){
+// 	int c = 50;
+// 	printf("%i", ft_isdigit(c));
+// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ipykhtin <ipykhtin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 13:51:33 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/10/29 13:54:57 by ipykhtin         ###   ########.fr       */
+/*   Updated: 2025/11/01 22:44:02 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t len)
 {
-	size_t i;
-	unsigned char *d;
-	const unsigned char *s;
+	size_t				i;
+	unsigned char		*d;
+	const unsigned char	*s;
 
 	i = 0;
 	d = (unsigned char *)dest;

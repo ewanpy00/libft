@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ipykhtin <ipykhtin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 12:29:36 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/10/29 14:26:06 by ipykhtin         ###   ########.fr       */
+/*   Updated: 2025/11/01 22:26:48 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
@@ -20,8 +20,6 @@ size_t	ft_strlen(char *str)
 	if (str == NULL)
 		return (i);
 	while (str[i])
-	{
-	}
-	i++;
+		i++;
 	return (i);
 }

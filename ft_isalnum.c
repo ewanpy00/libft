@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ipykhtin <ipykhtin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 12:22:39 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/10/29 13:55:24 by ipykhtin         ###   ########.fr       */
+/*   Updated: 2025/11/01 22:24:04 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	ft_isalnum(int a)
 {
-	if (a >= '0' && a <= '9' || a >= 'A' && a <= "Z" || a >= 'a' || a <= 'z')
+	if ((a >= '0' && a <= '9') || (a >= 'A' && a <= 'Z') || (a >= 'a'
+			&& a <= 'z'))
 		return (1);
 	return (0);
 }
@@ -25,7 +26,7 @@ int	ft_isalnum(int a)
 
 //     printf("Testing character: '%c' (ASCII: %d)\n", c, c);
 //     printf("ft_isalnum result: %d, isalnum result: %d\n", ft_result,
-	original_result);
+// original_result);
 
 //     if (ft_result == original_result) {
 //         printf("Test passed: Both results match.\n\n");
@@ -57,8 +58,8 @@ int	ft_isalnum(int a)
 //     run_test_case('\n');  // Should be 0 (non-alphanumeric)
 //     run_test_case('\t');  // Should be 0 (non-alphanumeric)
 
-//    
-	// Test case 6: Boundary cases (characters at the boundary of alphanumeric)
+//
+// Test case 6: Boundary cases (characters at the boundary of alphanumeric)
 //     run_test_case('Z' + 1); // Should be 0 (non-alphanumeric)
 //     run_test_case('a' - 1); // Should be 0 (non-alphanumeric)
 

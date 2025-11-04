@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ipykhtin <ipykhtin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:46:42 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/10/29 16:22:16 by ipykhtin         ###   ########.fr       */
+/*   Updated: 2025/11/01 22:55:28 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
-	size_t	i;
 	char	*ptr;
 
 	if (!s1 || !s2)

@@ -9,3 +9,5 @@ check for octal system in all the character functions           P.S. not sure it
 Atoi Max And MIN values
 
 return ptr tpp an int
+
+find out what is **lst ???

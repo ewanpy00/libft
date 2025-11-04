@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ipykhtin <ipykhtin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 12:45:44 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/10/29 13:52:45 by ipykhtin         ###   ########.fr       */
+/*   Updated: 2025/11/02 11:07:33 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 void	*ft_memset(void *s, int c, size_t len)
 {
-	size_t i;
+	size_t			i;
+	unsigned char	*p;
 
 	i = 0;
-	unsigned char *p = (unsigned char *)s;
+	p = (unsigned char *)s;
 	while (i < len)
 	{
 		p[i] = (unsigned char)c;

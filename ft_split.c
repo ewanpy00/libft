@@ -3,76 +3,81 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ipykhtin <ipykhtin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 14:06:10 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/01 13:49:05 by ipykhtin         ###   ########.fr       */
+/*   Updated: 2025/11/01 23:40:49 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t count_words(const char *s, char c){
-    size_t len;
-    size_t words;
+static size_t	count_words(const char *s, char c)
+{
+	size_t	len;
+	size_t	words;
 
-    len = 0;
-    words = 0;
-    while(s[len]){
-        if(s[len] != c){
-            while(s[len] != c)
-                len++;
-            words++;
-        }
-        len++;
-    }
-    return words;
+	len = 0;
+	words = 0;
+	while (s[len])
+	{
+		if (s[len] != c)
+		{
+			while (s[len] != c)
+				len++;
+			words++;
+		}
+		len++;
+	}
+	return (words);
 }
 
-char *word_splitter(const char *str, char c){
-    char *res;
-    size_t i;
+static char	*word_splitter(const char *str, char c)
+{
+	char	*res;
+	size_t	i;
 
-    i = 0;
-    while(str[i] != c && str[i])
-        i++;
-    res = malloc(i + 1);
-    if(!res)
-        return NULL;
-    i = 0;
-    while(str[i] != c && str[i])
-    {
-        res[i] = str[i];
-        i++;
-    }
-    res[i] = '\0';
-    return res;
+	i = 0;
+	while (str[i] != c && str[i])
+		i++;
+	res = malloc(i + 1);
+	if (!res)
+		return (NULL);
+	i = 0;
+	while (str[i] != c && str[i])
+	{
+		res[i] = str[i];
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
 }
 
-char **ft_split(char const *s, char c){
-    char **result;
-    size_t strlen;
-    size_t i;
-    size_t j;
+char	**ft_split(char const *s, char c)
+{
+	char	**result;
+	size_t	i;
+	size_t	j;
 
-    i = 0;
-    j = 0;
-    result = malloc((count_words(s, c) + 1) * sizeof(char *));
-    if(!result || !s)
-        return NULL;
-    while(s[i]){
-        if(s[i] != c)
-        {
-            result[j] = word_splitter(&s[i], c);
-            while(s[i] != c && s[i])
-                i++;
-            j++;
-        }
-        else
-            i++;
-    }
-    result[j] = 0;
-    return result;
+	i = 0;
+	j = 0;
+	result = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!result || !s)
+		return (NULL);
+	while (s[i])
+	{
+		if (s[i] != c)
+		{
+			result[j] = word_splitter(&s[i], c);
+			while (s[i] != c && s[i])
+				i++;
+			j++;
+		}
+		else
+			i++;
+	}
+	result[j] = 0;
+	return (result);
 }
 
 // int main(){
@@ -88,7 +93,7 @@ char **ft_split(char const *s, char c){
 //     if (!result)
 //     {
 //         printf("Result is NULL\n");
-//         return;
+//         return ;
 //     }
 //     while (result[i])
 //     {
@@ -102,7 +107,7 @@ char **ft_split(char const *s, char c){
 // {
 //     int i = 0;
 //     if (!result)
-//         return;
+//         return ;
 //     while (result[i])
 //     {
 //         free(result[i]);
@@ -131,12 +136,12 @@ char **ft_split(char const *s, char c){
 
 //     for (int i = 0; tests[i] != NULL; i++)
 //     {
-//         printf("Test %d: \"%s\" (delimiter = '%c')\n", i + 1, tests[i], delimiters[i]);
+//         printf("Test %d: \"%s\" (delimiter = '%c')\n", i + 1, tests[i],
+// delimiters[i]);
 //         char **result = ft_split(tests[i], delimiters[i]);
 //         print_split_result(result);
 //         free_split(result);
 //         printf("--------------------------------\n");
 //     }
-
-//     return 0;
+//     return (0);x
 // }

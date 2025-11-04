@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/01 15:36:48 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/01 22:56:15 by ivan             ###   ########.fr       */
+/*   Created: 2025/10/28 14:02:23 by ipykhtin          #+#    #+#             */
+/*   Updated: 2025/11/03 16:26:36 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+char	*ft_strchr(const char *str, int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
+	if (!str)
+		return (NULL);
+	while (*str)
 	{
-		f(i, &s[i]);
-		i++;
+		if ((unsigned char)*str == (unsigned char)c)
+			return ((char *)str);
+		str++;
 	}
+	if((unsigned char) *str == (unsigned char) c)
+		return (char *)str;
+	return (0);
 }
+
+// int main(){
+// 	char *str = "Hello 42";
+// 	int c;
+
+// 	printf("%s", ft_strchr(str, c));
+// }

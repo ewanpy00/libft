@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/01 15:36:48 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/01 22:56:15 by ivan             ###   ########.fr       */
+/*   Created: 2025/11/01 22:54:08 by ivan              #+#    #+#             */
+/*   Updated: 2025/11/01 22:54:49 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	const unsigned char	*p1;
+	const unsigned char	*p2;
 
-	i = 0;
-	while (s[i])
+	p1 = s1;
+	p2 = s2;
+	while (n--)
 	{
-		f(i, &s[i]);
-		i++;
+		if (*p1 != *p2)
+			return (*p1 - *p2);
+		p1++;
+		p2++;
 	}
+	return (0);
 }

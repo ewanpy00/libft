@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/01 15:36:48 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/01 22:56:15 by ivan             ###   ########.fr       */
+/*   Created: 2025/11/02 10:58:03 by ivan              #+#    #+#             */
+/*   Updated: 2025/11/02 17:31:15 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
+	t_list	*new_lst;
+	t_list	*new_node;
 
-	i = 0;
-	while (s[i])
+	if (!lst || !f)
+		return (NULL);
+	new_lst = NULL;
+	new_node = NULL;
+	while (lst)
 	{
-		f(i, &s[i]);
-		i++;
+		new_node = ft_lstnew(f(lst->content));
+		if (!new_node)
+		{
+			ft_lstclear(&new_lst, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_lst, new_node);
+		lst = lst->next;
 	}
+	return (new_lst);
 }

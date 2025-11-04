@@ -3,68 +3,54 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ipykhtin <ipykhtin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 16:22:54 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/10/31 14:06:05 by ipykhtin         ###   ########.fr       */
+/*   Created: 2023/03/19 22:47:42 by wcorrea-          #+#    #+#             */
+/*   Updated: 2025/11/02 11:10:47 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <strings.h>
 
-int is_set(const char *set, char c)
+static int	is_set(char c, char const *set)
 {
-	while(*set)
+	while (*set)
 	{
-		if(*set == c)
-			return 1;
+		if (c == *set)
+			return (1);
 		set++;
 	}
-	return 0;
+	return (0);
 }
 
-char    *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-    size_t i;
-    size_t j;
-    size_t len;
-    char *result;
-    
-    if (!s1)
-        return (NULL);
-    i = 0;
-    while (s1[i] && is_set(set, s1[i]))
-        i++;
-    len = 0;
-    while (s1[len])
-        len++;
-    j = len;
-    if (i == j)
-	{
-        result = (char *)malloc(1);
-        if (result)
-            *result = '\0';
-        return (result);
-    }
-    while (j > i && is_set(set, s1[j - 1]))
-        j--;
+	size_t	len;
+	size_t	sublen;
+	char	*trimmed;
+	size_t	i;
+	size_t	j;
 
-    result = (char *)malloc(j - i + 1);
-    if (!result)
-        return (NULL);
-    len = 0;
-    while (i < j)
-        result[len++] = s1[i++];
-    result[len] = '\0';
-
-    return (result);
+	len = ft_strlen(s1);
+	i = 0;
+	while (s1[i] && is_set(s1[i], set))
+		i++;
+	j = len - 1;
+	while (j > i && is_set(s1[j], set))
+		j--;
+	sublen = j - i;
+	trimmed = (char *)malloc(sizeof(char) * (sublen + 2));
+	if (!trimmed)
+		return (NULL);
+	ft_memcpy(trimmed, s1 + i, sublen + 1);
+	trimmed[sublen + 1] = '\0';
+	return (trimmed);
 }
 
 // void    test_strtrim(const char *s1, const char *set, const char *expected)
 // {
 //     char *result = ft_strtrim(s1, set);
-    
+
 //     printf("--- Test Case ---\n");
 //     printf("Input String (s1): \"%s\"\n", s1);
 //     printf("Trim Set (set):    \"%s\"\n", set);
@@ -103,7 +89,7 @@ char    *ft_strtrim(char const *s1, char const *set)
 
 //     // 5. Empty Set (Should return a copy of s1)
 //     test_strtrim("  hello world  ", "", "  hello world  ");
-    
+
 //     // 6. Empty Input String (s1 is empty)
 //     test_strtrim("", "abc", "");
 
@@ -112,7 +98,7 @@ char    *ft_strtrim(char const *s1, char const *set)
 
 //     // 8. Trim only leading characters
 //     test_strtrim("   hello", " ", "hello");
-    
+
 //     // 9. Trim only trailing characters
 //     test_strtrim("hello   ", " ", "hello");
 

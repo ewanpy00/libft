@@ -1,32 +1,23 @@
-//
-#include <stdio.h>
-#include <string.h>
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwei <mwei@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/23 17:13:17 by mwei              #+#    #+#             */
-/*   Updated: 2025/08/18 11:31:19 by mwei             ###   ########.fr       */
+/*   Created: 2025/11/02 10:40:50 by ivan              #+#    #+#             */
+/*   Updated: 2025/11/02 11:08:46 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int ret(char *str){
-	int i;
-	printf("%i", str);
-	// printf("%i")
-
-	return i;
-}
-
-int	main(void)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	char *str = "Hello world";
-	printf("%i", ret(str));
+	if (lst && del)
+	{
+		del(lst->content);
+		free(lst);
+		lst = NULL;
+	}
 }

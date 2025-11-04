@@ -3,13 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ipykhtin <ipykhtin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 16:22:40 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/01 16:25:16 by ipykhtin         ###   ########.fr       */
+/*   Updated: 2025/11/01 22:58:00 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putchar_fd(char c, int fd){
-    write(fd, c, 1);
+#include "libft.h"
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }

@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strch.c                                         :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ipykhtin <ipykhtin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 14:02:23 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/10/29 13:52:35 by ipykhtin         ###   ########.fr       */
+/*   Created: 2025/11/02 10:47:55 by ivan              #+#    #+#             */
+/*   Updated: 2025/11/02 10:53:22 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	while (*str)
+	t_list	*next;
+	t_list	*current;
+
+	if (lst && del)
 	{
-		if (*str == c)
-			return (*str);
-		str++;
+		current = *lst;
+		while (current)
+		{
+			next = current->next;
+			del(current->content);
+			free(current);
+			current = next;
+		}
+		*lst = NULL;
 	}
-	return (0);
 }

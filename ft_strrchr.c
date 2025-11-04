@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ipykhtin <ipykhtin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 14:14:53 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/10/29 13:51:59 by ipykhtin         ###   ########.fr       */
+/*   Updated: 2025/11/03 16:44:14 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	char *p;
+	char	*p;
 
+	p = NULL;
 	while (*str)
 	{
-		if (*str == c)
-		{
+		if ((unsigned char)*str == (unsigned char)c)
 			p = (char *)str;
-		}
 		str++;
 	}
-	return (p);
+	if((unsigned char)*str == (unsigned char)c)
+		return (char *) str;
+	return p;
 }
