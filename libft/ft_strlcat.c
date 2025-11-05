@@ -6,7 +6,7 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:39:15 by ivan              #+#    #+#             */
-/*   Updated: 2025/11/05 13:18:45 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/05 15:41:04 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t src_len;
-	size_t dst_len;
-	size_t i;
+	size_t	src_len;
+	size_t	dst_len;
+	size_t	i;
 
 	i = 0;
 	dst_len = 0;
@@ -87,5 +87,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 //         run_test(i + 1, tests[i].initial_dst, tests[i].src, tests[i].size);
 //     }
 
-//     return 0;
+//     return (0);
 // }

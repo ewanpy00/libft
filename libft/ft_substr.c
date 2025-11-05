@@ -6,7 +6,7 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:13:21 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/05 10:34:45 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/05 15:40:39 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-
 	slen = ft_strlen(s);
 	if (start >= slen)
 		return (ft_strdup(""));
-
 	if (len > slen - start)
 		len = slen - start;
-
 	substr = malloc(len + 1);
 	if (!substr)
 		return (NULL);
-
 	i = 0;
 	while (i < len && s[start + i])
 	{

@@ -6,7 +6,7 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 23:55:35 by ivan              #+#    #+#             */
-/*   Updated: 2025/11/04 23:40:23 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/05 15:44:26 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (!lst || !new)
 		return ;
-	if(*lst == NULL){
+	if (*lst == NULL)
+	{
 		*lst = new;
-		return;
+		return ;
 	}
 	if (*lst)
 	{

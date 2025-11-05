@@ -6,23 +6,26 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 14:06:10 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/05 15:10:00 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/05 15:40:19 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void free_split(char **strs, size_t j){
-	while(j--)
+static void	free_split(char **strs, size_t j)
+{
+	while (j--)
 		free(strs[j]);
 	free(strs);
 }
 
 static size_t	count_words(const char *s, char c)
 {
-	size_t	i = 0;
-	size_t	words = 0;
+	size_t	i;
+	size_t	words;
 
+	i = 0;
+	words = 0;
 	while (s[i])
 	{
 		while (s[i] == c && s[i])
@@ -66,8 +69,8 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	if(!s)
-		return NULL;
+	if (!s)
+		return (NULL);
 	result = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!result || !s)
 		return (NULL);
@@ -76,10 +79,10 @@ char	**ft_split(char const *s, char c)
 		if (s[i] != c)
 		{
 			result[j] = word_splitter(&s[i], c);
-			if(result[j] == NULL)
+			if (result[j] == NULL)
 			{
 				free_split(result, j);
-				return NULL;
+				return (NULL);
 			}
 			while (s[i] != c && s[i])
 				i++;

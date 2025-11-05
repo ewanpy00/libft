@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ipykhtin <ipykhtin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 13:49:26 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/04 17:21:12 by ipykhtin         ###   ########.fr       */
+/*   Updated: 2025/11/05 15:44:20 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@ static size_t	ilength(long n)
 	size_t	len;
 
 	len = 0;
-	if(n <= 0)
+	if (n <= 0)
 		len += 1;
 	else
 		len = 0;
-	while(n){
+	while (n)
+	{
 		n /= 10;
 		len++;
 	}
-	return len;
+	return (len);
 }
 
 static char	*make_str(long n, char *res, int i)
@@ -64,7 +65,6 @@ char	*ft_itoa(int n)
 
 	num = n;
 	i = ilength(n);
-
 	result = malloc(i + 1);
 	if (!result)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 14:02:23 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/05 10:51:28 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/05 15:40:07 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ char	*ft_strchr(const char *str, int c)
 			return ((char *)str);
 		str++;
 	}
-	if((unsigned char) *str == (unsigned char) c)
-		return (char *)str;
+	if ((unsigned char)*str == (unsigned char)c)
+		return ((char *)str);
 	return (0);
 }
 
