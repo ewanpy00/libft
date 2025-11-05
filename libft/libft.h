@@ -6,16 +6,16 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:36:31 by wcorrea-          #+#    #+#             */
-/*   Updated: 2025/11/01 22:32:32 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/05 13:16:48 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
+//# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
+//# include <string.h>
 # include <unistd.h>
 
 typedef struct s_list

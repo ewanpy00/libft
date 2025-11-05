@@ -6,7 +6,7 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:46:42 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/01 22:55:28 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/05 13:19:06 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	str = malloc(strlen(s1) + strlen(s2) + 1);
+	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	ptr = str;
 	if (!str)
 		return (NULL);
