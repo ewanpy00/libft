@@ -6,7 +6,7 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 14:02:23 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/03 16:26:36 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/05 10:51:28 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	if (!str)
-		return (NULL);
 	while (*str)
 	{
 		if ((unsigned char)*str == (unsigned char)c)
@@ -29,8 +27,8 @@ char	*ft_strchr(const char *str, int c)
 }
 
 // int main(){
-// 	char *str = "Hello 42";
+// 	char *str;
 // 	int c;
 
-// 	printf("%s", ft_strchr(str, c));
+// 	printf("%s", ft_strchr(NULL, c));
 // }

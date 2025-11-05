@@ -6,7 +6,7 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 00:28:24 by ivan              #+#    #+#             */
-/*   Updated: 2025/11/02 10:37:28 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/04 23:05:51 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int	i;
 
 	i = 0;
-	while (lst->next)
+	while (lst)
 	{
 		i++;
 		lst = lst->next;

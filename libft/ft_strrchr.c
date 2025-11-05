@@ -6,24 +6,24 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 14:14:53 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/03 16:44:14 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/05 11:16:53 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	char	*p;
+	char	*last;
 
-	p = NULL;
-	while (*str)
+	last = NULL;
+	while (*s)
 	{
-		if ((unsigned char)*str == (unsigned char)c)
-			p = (char *)str;
-		str++;
+		if ((unsigned char)*s == (unsigned char)c)
+			last = (char *)s;
+		s++;
 	}
-	if((unsigned char)*str == (unsigned char)c)
-		return (char *) str;
-	return p;
+	if ((unsigned char)*s == (unsigned char)c)
+		return ((char *)s);
+	return (last);
 }

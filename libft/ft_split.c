@@ -6,7 +6,7 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 14:06:10 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/01 23:40:49 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/04 22:58:57 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,19 @@
 
 static size_t	count_words(const char *s, char c)
 {
-	size_t	len;
-	size_t	words;
+	size_t	i = 0;
+	size_t	words = 0;
 
-	len = 0;
-	words = 0;
-	while (s[len])
+	while (s[i])
 	{
-		if (s[len] != c)
+		while (s[i] == c && s[i])
+			i++;
+		if (s[i])
 		{
-			while (s[len] != c)
-				len++;
 			words++;
+			while (s[i] && s[i] != c)
+				i++;
 		}
-		len++;
 	}
 	return (words);
 }
@@ -61,6 +60,8 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if(!s)
+		return NULL;
 	result = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!result || !s)
 		return (NULL);

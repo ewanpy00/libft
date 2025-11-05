@@ -6,7 +6,7 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 12:29:36 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/01 22:26:48 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/05 10:47:48 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
-	if (str == NULL)
-		return (i);
 	while (str[i])
 		i++;
 	return (i);
