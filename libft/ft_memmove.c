@@ -6,7 +6,7 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 17:50:15 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/05 13:24:08 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/05 14:47:01 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 		ft_memcpy(d, s, len);
 	else
 	{
-		while(len--)
+		while (len--)
 			d[len] = s[len];
 	}
 	return (dest);

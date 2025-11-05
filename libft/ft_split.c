@@ -6,11 +6,17 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 14:06:10 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/04 22:58:57 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/05 15:10:00 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void free_split(char **strs, size_t j){
+	while(j--)
+		free(strs[j]);
+	free(strs);
+}
 
 static size_t	count_words(const char *s, char c)
 {
@@ -70,6 +76,11 @@ char	**ft_split(char const *s, char c)
 		if (s[i] != c)
 		{
 			result[j] = word_splitter(&s[i], c);
+			if(result[j] == NULL)
+			{
+				free_split(result, j);
+				return NULL;
+			}
 			while (s[i] != c && s[i])
 				i++;
 			j++;
