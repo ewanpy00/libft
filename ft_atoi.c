@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ipykhtin <ipykhtin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 15:54:29 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/06 08:33:19 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/06 15:10:32 by ipykhtin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,15 +70,14 @@ int	ft_atoi(const char *str)
 // int	main(void)
 // {
 // 	const char	*str0 = "2147483648";
-// 	const char	*str1 = " -1000000000000000000
-//0000000000000000000000000000000000000000000000000000000";
+// 	const char	*str1 = " -10000000000000000000000000000000000000000000000000000000000000000000000000";
 // 	const char	*str2 = "42";
 // 	const char	*str3 = "  +99";
 // 	const char	*str4 = "   0005";
 // 	const char	*str5 = "abc";
 
 // 	// Invalid input; should return 0
-// 	printf("Result 1: %d / %d\n", ft_atoi(str0), atoi(str0)); // Expected: -1234
+// 	printf("Result 1: %d / %d\n", ft_atoi(str0), atoi(NULL)); // Expected: -1234
 // 	printf("Result 1: %d / %d\n", ft_atoi(str1), atoi(str1)); // Expected: -1234
 // 	printf("Result 2: %d\n", ft_atoi(str2));                  // Expected: 42
 // 	printf("Result 3: %d\n", ft_atoi(str3));                  // Expected: 99

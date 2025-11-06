@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ipykhtin <ipykhtin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 13:26:18 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/06 08:40:30 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/06 15:10:51 by ipykhtin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
 
 void	ft_bzero(void *s, size_t len)
 {

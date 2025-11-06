@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ipykhtin <ipykhtin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 22:47:42 by wcorrea-          #+#    #+#             */
-/*   Updated: 2025/11/02 11:10:47 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/06 14:52:52 by ipykhtin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (trimmed);
 }
 
+// #include <stdio.h>
+// #include <string.h>
+
 // void    test_strtrim(const char *s1, const char *set, const char *expected)
 // {
-//     char *result = ft_strtrim(s1, set);
+//     char *result = ft_strtrim(NULL, set);
 
 //     printf("--- Test Case ---\n");
 //     printf("Input String (s1): \"%s\"\n", s1);
