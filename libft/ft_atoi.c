@@ -6,57 +6,72 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 15:54:29 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/05 15:58:22 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/06 08:33:19 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
+#include <limits.h>
+
+static int	skip_spaces_and_sign(const char **str)
+{
+	int	sign;
+
+	sign = 1;
+	while ((**str >= '\t' && **str <= '\r') || **str == ' ')
+		(*str)++;
+	if (**str == '+' || **str == '-')
+	{
+		if (**str == '-')
+			sign = -1;
+		(*str)++;
+	}
+	return (sign);
+}
+
+static int	check_overflow(long long result, int digit, int sign)
+{
+	if (result > LLONG_MAX / 10
+		|| (result == LLONG_MAX / 10 && digit > (LLONG_MAX % 10)))
+	{
+		if (sign == 1)
+			return (-1);
+		else
+			return (0);
+	}
+	return (42);
+}
 
 int	ft_atoi(const char *str)
 {
-	long long		result;
-	int				sign;
-	unsigned int	digit;
+	long long	result;
+	int			sign;
+	int			digit;
+	int			overflow;
 
 	result = 0;
-	sign = 1;
-	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
-	{
-		str++;
-	}
-	if (*str == '+' || *str == '-')
-	{
-		if (*str == '-')
-			sign = -1;
-		str++;
-	}
+	sign = skip_spaces_and_sign(&str);
 	while (*str >= '0' && *str <= '9')
 	{
 		digit = *str - '0';
-		if (result > (long long)(LLONG_MAX / 10)
-			|| (result == (long long)(LLONG_MAX / 10)
-				&& (long long)digit > (long long)(LLONG_MAX % 10)))
-		{
-			if (sign == 1)
-				return (-1);
-			else
-				return (0);
-		}
+		overflow = check_overflow(result, digit, sign);
+		if (overflow != 42)
+			return (overflow);
 		result = result * 10 + digit;
 		str++;
 	}
-	return ((int)result * sign);
+	return ((int)(result * sign));
 }
 
 // #include <stdio.h>
+// #include <stdlib.h>
 
 // int	main(void)
 // {
 // 	const char	*str0 = "2147483648";
-// 	const char	*str1 = 
-//" -100000000000000000000000000000000000000000000
-//00000000000000000000000000000";
+// 	const char	*str1 = " -1000000000000000000
+//0000000000000000000000000000000000000000000000000000000";
 // 	const char	*str2 = "42";
 // 	const char	*str3 = "  +99";
 // 	const char	*str4 = "   0005";

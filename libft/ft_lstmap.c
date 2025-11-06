@@ -6,7 +6,7 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 10:58:03 by ivan              #+#    #+#             */
-/*   Updated: 2025/11/05 15:26:42 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/06 13:12:16 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		new_node = ft_lstnew(f(lst->content));
 		if (!new_node)
 		{
+			del(new_node);
 			ft_lstclear(&new_lst, del);
 			return (NULL);
 		}

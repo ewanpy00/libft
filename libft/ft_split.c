@@ -6,7 +6,7 @@
 /*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 14:06:10 by ipykhtin          #+#    #+#             */
-/*   Updated: 2025/11/05 15:40:19 by ivan             ###   ########.fr       */
+/*   Updated: 2025/11/05 21:41:58 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,38 +61,47 @@ static char	*word_splitter(const char *str, char c)
 	return (res);
 }
 
+static int	add_word(char **res, const char *s, char c, size_t *i)
+{
+	res[*i] = word_splitter(s, c);
+	if (!res[*i])
+	{
+		free_split(res, *i);
+		return (0);
+	}
+	while (*s && *s != c)
+		s++;
+	(*i)++;
+	return (1);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	char	**result;
+	char	**res;
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	j = 0;
 	if (!s)
 		return (NULL);
-	result = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!result || !s)
+	res = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!res)
 		return (NULL);
+	i = 0;
+	j = 0;
 	while (s[i])
 	{
 		if (s[i] != c)
 		{
-			result[j] = word_splitter(&s[i], c);
-			if (result[j] == NULL)
-			{
-				free_split(result, j);
+			if (!add_word(res, &s[i], c, &j))
 				return (NULL);
-			}
-			while (s[i] != c && s[i])
+			while (s[i] && s[i] != c)
 				i++;
-			j++;
 		}
 		else
 			i++;
 	}
-	result[j] = 0;
-	return (result);
+	res[j] = NULL;
+	return (res);
 }
 
 // int main(){
